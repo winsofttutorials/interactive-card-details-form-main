@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -21,9 +23,222 @@
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
+  width: 100%;
+
+  margin-top: 30px;
 }
 .attribution a {
+  font-size: 12px;
   color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--White);
+}
+
+.leftSide {
+  flex-basis: 25%;
+  position: relative;
+}
+
+/* ----------------Card setup--------------- */
+
+.frontCardFrame {
+  width: 270px;
+  height: 160px;
+  background: url(./images/bg-card-front.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  padding: 20px;
+  top: 30%;
+  right: -80px;
+  border-radius: 10px;
+  color: var(--White);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.cardLogo {
+  width: 50px;
+  display: block;
+}
+
+.cardNumber {
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+.ownerInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ownerInfo p {
+  color: var(--Light-grayish-violet);
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.backCardFrame {
+  width: 270px;
+  height: 160px;
+  background: url(./images/bg-card-back.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  padding: 20px;
+  top: 55%;
+  right: -120px;
+  border-radius: 10px;
+}
+
+.cvvNumber {
+  color: var(--Light-grayish-violet);
+  font-size: 12px;
+  float: right;
+  margin-top: 50px;
+  margin-right: 4px;
+}
+
+.rightSide {
+  flex-basis: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+form {
+  max-width: 300px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+input {
+  width: 100%;
+  padding: 9px;
+  border-radius: 8px;
+  border: 2px solid var(--Light-grayish-violet);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--Linear-gradient);
+}
+
+::placeholder {
+  color: var(--Light-grayish-violet);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+.userGroup {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.securitySection {
+  display: flex;
+}
+
+.rightInfo {
+  flex-basis: 48%;
+}
+
+.leftInfo {
+  flex: 48%;
+}
+
+.leftInfo input {
+  width: 70px;
+  margin-right: 4px;
+}
+
+button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  width: 100%;
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  font-weight: 500;
+  border-radius: 8px;
+  outline: 0;
+  border: 0;
+}
+
+#userInfoErrorMsg,
+#cvvErrorMsg,
+#expiryErrorMsg,
+#cardNumberErrorMsg {
+  color: var(--Red);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.successMsg {
+  width: 370px;
+  text-align: center;
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.completeIcon {
+  width: 50px;
+}
+
+.thanksMsg {
+  margin: 20px 0;
+}
+
+.thanksText {
+  font-size: 12px;
+  color: var(--Dark-grayish-violet);
+}
+
+@media (max-width: 375px) {
+  main {
+    flex-direction: column;
+  }
+
+  .frontCardFrame {
+    top: 129px;
+    z-index: 4;
+    right: 80px;
+  }
+  .backCardFrame {
+    right: 20px;
+    top: 40px;
+    z-index: 2;
+  }
+
+  form {
+    margin-top: 70px;
+  }
+
+  .successMsg {
+    margin-top: 65%;
+    width: 200px;
+  }
 }
